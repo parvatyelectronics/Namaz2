@@ -32,7 +32,7 @@ function renderTable(timings) {
 
 // Function to fetch data from your GitHub/Remote Source
 async function fetchTimings() {
-  const url = 'YOUR_GITHUB_PAGES_URL_HERE/data.json'; // Replace with your actual link
+  const url = 'https://github.com/parvatyelectronics/Namaz2/namz_data1.json'; // Replace with your actual link
   try {
     const response = await fetch(url);
     const data = await response.json();
@@ -45,3 +45,4 @@ async function fetchTimings() {
 // Start the automation
 fetchTimings(); // Initial load
 setInterval(fetchTimings, 10000); // Check for updates every 10 seconds
+
