@@ -1,0 +1,47 @@
+// Function to render the table (Your existing logic)
+function renderTable(timings) {
+  const tableHtml = `
+    <style>
+      table, th, td { border: 2px solid green; color: blue; font-family: Arial; }
+      h1 { color: blue; font-family: Arial; font-size: 420%; margin-bottom: 10px; }
+      th { color: magenta; font-size: 160%; padding: 10px; }
+      td { color: red; font-size: 160%; padding: 10px; text-align: center; }
+      table { width: 80%; border-collapse: collapse; }
+      p { font-family: Arial; font-size: 120%; color: gray; }
+    </style>
+
+    <h1>NAMAZ TIMINGS</h1>
+    <table>
+      <tr>
+        <th>Namaz</th>
+        <th>BANGU</th>
+        <th>IKAMATH</th>
+      </tr>
+      ${timings.map(t => `
+        <tr>
+          <td>${t.namaz}</td>
+          <td>${t.bangu}</td>
+          <td>${t.ikamath}</td>
+        </tr>
+      `).join('')}
+    </table>
+    <p>Parveen Electronics, Madurai</p>
+  `;
+  document.body.innerHTML = tableHtml;
+}
+
+// Function to fetch data from your GitHub/Remote Source
+async function fetchTimings() {
+  const url = 'YOUR_GITHUB_PAGES_URL_HERE/data.json'; // Replace with your actual link
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    renderTable(data);
+  } catch (error) {
+    console.error("Failed to load Namaz timings:", error);
+  }
+}
+
+// Start the automation
+fetchTimings(); // Initial load
+setInterval(fetchTimings, 10000); // Check for updates every 10 seconds

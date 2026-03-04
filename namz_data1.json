@@ -1,0 +1,8 @@
+[
+  { "namaz": "FAZR", "bangu": "05:20", "ikamath": "05:50" },
+  { "namaz": "LUHR", "bangu": "12:45", "ikamath": "12:58" },
+  { "namaz": "AZAR", "bangu": "04:45", "ikamath": "04:55" },
+  { "namaz": "MAHRIB", "bangu": "05:45", "ikamath": "05:55" },
+  { "namaz": "ISHA", "bangu": "08:10", "ikamath": "08:30" },
+  { "namaz": "JUMMA", "bangu": "01:15", "ikamath": "01:30" }
+]
